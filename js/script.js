@@ -32,17 +32,17 @@ document.addEventListener('keydown', function (e) {
 
 ///////////////////////////////////////
 // Cookie message
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-message.innerHTML = `Cookie message. <button class="btn btn--close-cookie">Got it !</button>`;
-header.append(message);
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// message.innerHTML = `Cookie message. <button class="btn btn--close-cookie">Got it !</button>`;
+// header.append(message);
 
-document.querySelector('.btn--close-cookie').addEventListener('click', () => {
-  message.parentElement.removeChild(message);
-});
+// document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+//   message.parentElement.removeChild(message);
+// });
 
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
 ///////////////////////////////////////
 // Smooth scrolling
@@ -91,6 +91,66 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
+
+///////////////////////////////////////
+// Menu fade animations
+const nav = document.querySelector('.nav');
+
+const handleHover = function (e) {
+  //console.log(this, e.currentTarget);
+
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+// nav.addEventListener('mouseover', function (e) {
+//   handleHover(e, 0.5); //(const handleHover = function (e, opacity) ), .style.opacity = 0.5;
+// });
+
+// nav.addEventListener('mouseout', function (e) {
+//   handleHover(e, 1); //(const handleHover = function (e, opacity) ), .style.opacity = 1;
+// });
+
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+nav.addEventListener('mouseout', handleHover.bind(1));
+
+///////////////////////////////////////
+// Sticky navigation
+// const initialCoords = section1.getBoundingClientRect();
+// //console.log(initialCoords);
+
+// window.addEventListener('scroll', function () {
+//   //console.log(this.window.scrollY);
+
+//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// });
+//The Intersection Observer API
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  //console.log(entry);
+
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+headerObserver.observe(header);
 
 ///////////////////////////////////////
 // Tabbet component
