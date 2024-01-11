@@ -4,9 +4,17 @@
 
   background-color: #fff;
 
+  @media only screen and (max-width: 990px) {
+    max-width: 50rem;
+  }
+
   &__tab {
     margin-right: 2.5rem;
     transform: translateY(-50%);
+
+    @media only screen and (max-width: 990px) {
+      padding: 2rem;
+    }
 
     &-container {
       display: flex;
@@ -48,11 +56,19 @@
     font-size: 1.7rem;
     padding: 2.5rem 7rem 6.5rem 7rem;
 
+    @media only screen and (max-width: 990px) {
+      padding: 2rem 4rem 4rem;
+    }
+
     &--active {
       display: grid;
       grid-template-columns: 7rem 1fr;
       column-gap: 3rem;
       row-gap: 0.5rem;
+
+      @media only screen and (max-width: 990px) {
+        column-gap: 2rem;
+      }
     }
 
     & p {

@@ -36,6 +36,11 @@ h1 {
   font-size: 5.5rem;
   line-height: 1.35;
 }
+@media only screen and (max-width: 990px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
 
 h4 {
   font-size: 2.4rem;
@@ -80,6 +85,11 @@ h4 {
   gap: 4rem;
   margin: 0 12rem;
 }
+@media only screen and (max-width: 990px) {
+  .features {
+    margin: 0;
+  }
+}
 .features__img {
   width: 100%;
 }
@@ -88,6 +98,11 @@ h4 {
   justify-self: center;
   width: 70%;
   font-size: 1.5rem;
+}
+@media only screen and (max-width: 990px) {
+  .features__feature {
+    width: 100%;
+  }
 }
 .features__icon {
   display: flex;
@@ -164,11 +179,24 @@ h4 {
   align-items: start;
   justify-items: start;
 }
+@media only screen and (max-width: 850px) {
+  .header__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .header__img {
   width: 100%;
   grid-column: 2/3;
   grid-row: 1/span 4;
   transform: translateY(-6rem);
+}
+@media only screen and (max-width: 850px) {
+  .header__img {
+    width: 33%;
+    transform: translateY(0rem);
+  }
 }
 
 .highlight {
@@ -330,6 +358,16 @@ h4 {
   padding: 0 6rem;
   z-index: 100;
 }
+@media only screen and (max-width: 990px) {
+  .nav {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .nav {
+    flex-direction: column;
+  }
+}
 .nav.sticky {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.95);
@@ -342,6 +380,19 @@ h4 {
   display: flex;
   align-items: center;
   list-style: none;
+}
+@media only screen and (max-width: 850px) {
+  .nav__links {
+    margin-top: 2rem;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .nav__links .nav__item:last-child {
+    position: absolute;
+    top: 5rem;
+    left: 7rem;
+  }
 }
 .nav__item {
   margin-left: 4rem;
@@ -371,9 +422,19 @@ h4 {
   margin: 12rem auto 0 auto;
   background-color: #fff;
 }
+@media only screen and (max-width: 990px) {
+  .operations {
+    max-width: 50rem;
+  }
+}
 .operations__tab {
   margin-right: 2.5rem;
   transform: translateY(-50%);
+}
+@media only screen and (max-width: 990px) {
+  .operations__tab {
+    padding: 2rem;
+  }
 }
 .operations__tab-container {
   display: flex;
@@ -406,11 +467,21 @@ h4 {
   font-size: 1.7rem;
   padding: 2.5rem 7rem 6.5rem 7rem;
 }
+@media only screen and (max-width: 990px) {
+  .operations__content {
+    padding: 2rem 4rem 4rem;
+  }
+}
 .operations__content--active {
   display: grid;
   grid-template-columns: 7rem 1fr;
   column-gap: 3rem;
   row-gap: 0.5rem;
+}
+@media only screen and (max-width: 990px) {
+  .operations__content--active {
+    column-gap: 2rem;
+  }
 }
 .operations__content p {
   grid-column: 2;

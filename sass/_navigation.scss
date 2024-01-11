@@ -7,6 +7,14 @@
   padding: 0 6rem;
   z-index: 100;
 
+  @media only screen and (max-width: 990px) {
+    padding: 0;
+  }
+
+  @media only screen and (max-width: 850px) {
+    flex-direction: column;
+  }
+
   &.sticky {
     position: fixed;
     background-color: rgba(255, 255, 255, 0.95);
@@ -21,6 +29,19 @@
     display: flex;
     align-items: center;
     list-style: none;
+
+    @media only screen and (max-width: 850px) {
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    @media only screen and (max-width: 850px) {
+      & .nav__item:last-child {
+        position: absolute;
+        top: 5rem;
+        left: 7rem;
+      }
+    }
   }
 
   &__item {
