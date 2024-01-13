@@ -294,12 +294,12 @@ h4 {
   width: 100%;
   padding: 0 6rem;
   z-index: 100; }
-  @media only screen and (max-width: 990px) {
-    .nav {
-      padding: 0; } }
   @media only screen and (max-width: 850px) {
     .nav {
-      flex-direction: column; } }
+      position: fixed;
+      background-color: #f3f3f3;
+      align-items: stretch;
+      padding-top: 2rem; } }
   .nav.sticky {
     position: fixed;
     background-color: rgba(255, 255, 255, 0.95); }
@@ -312,13 +312,7 @@ h4 {
     list-style: none; }
     @media only screen and (max-width: 850px) {
       .nav__links {
-        margin-top: 2rem;
-        position: relative; } }
-    @media only screen and (max-width: 850px) {
-      .nav__links .nav__item:last-child {
-        position: absolute;
-        top: 5rem;
-        left: 7rem; } }
+        display: none; } }
   .nav__item {
     margin-left: 4rem; }
   .nav__link:link, .nav__link:visited {
@@ -328,6 +322,9 @@ h4 {
     text-decoration: none;
     display: block;
     transition: all 0.3s; }
+    @media only screen and (max-width: 850px) {
+      .nav__link:link, .nav__link:visited {
+        font-size: 2.5rem; } }
   .nav__link--btn:link, .nav__link--btn:visited {
     padding: 0.8rem 2.5rem;
     border-radius: 3rem;
@@ -337,6 +334,36 @@ h4 {
     color: inherit;
     background-color: #4bbb7d;
     color: #333; }
+
+@media only screen and (max-width: 850px) {
+  .burger {
+    position: relative;
+    border: none;
+    outline: none;
+    margin-top: 2rem;
+    cursor: pointer; }
+    .burger, .burger::after, .burger::before {
+      width: 3rem;
+      height: 2px;
+      background-color: #444;
+      display: inline-block; }
+    .burger::before, .burger::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all 0.2s; }
+    .burger::before {
+      top: -0.8rem; }
+    .burger::after {
+      top: 0.8rem; }
+    .burger--open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      gap: 5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); } }
 
 .operations {
   max-width: 100rem;

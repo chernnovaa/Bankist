@@ -313,3 +313,12 @@ const slider = function () {
   });
 };
 slider();
+
+//burger menu
+const burgerBtn = document.querySelector('.burger');
+const burgerMenu = document.querySelector('.burger--open');
+
+burgerBtn.addEventListener('click', () => {
+  burgerMenu.classList.toggle('burger--open');
+  // nav.style.height = '100vh';
+});
