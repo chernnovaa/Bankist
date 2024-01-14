@@ -4,10 +4,6 @@
 
   background-color: #fff;
 
-  @media only screen and (max-width: 990px) {
-    max-width: 50rem;
-  }
-
   &__tab {
     margin-right: 2.5rem;
     transform: translateY(-50%);
@@ -16,9 +12,17 @@
       padding: 2rem;
     }
 
+    @media only screen and (max-width: 675px) {
+      max-width: 12rem;
+    }
+
     &-container {
       display: flex;
       justify-content: center;
+
+      @media only screen and (max-width: 675px) {
+        justify-content: space-between;
+      }
     }
 
     & span {
@@ -58,6 +62,10 @@
 
     @media only screen and (max-width: 990px) {
       padding: 2rem 4rem 4rem;
+    }
+
+    @media only screen and (max-width: 675px) {
+      padding: 0 2rem 4rem;
     }
 
     &--active {

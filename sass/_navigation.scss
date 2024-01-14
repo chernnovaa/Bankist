@@ -23,6 +23,10 @@
   &__logo {
     height: 4.5rem;
     transition: all 0.3s;
+
+    @media only screen and (max-width: 850px) {
+      z-index: 10;
+    }
   }
 
   &__links {
@@ -31,7 +35,7 @@
     list-style: none;
 
     @media only screen and (max-width: 850px) {
-      display: none;
+      //display: none;
     }
   }
 
@@ -71,6 +75,10 @@
   }
 }
 
+.burger {
+  display: none;
+}
+
 @media only screen and (max-width: 850px) {
   .burger {
     position: relative;
@@ -78,6 +86,7 @@
     outline: none;
     margin-top: 2rem;
     cursor: pointer;
+    z-index: 100;
 
     &,
     &::after,
@@ -103,14 +112,21 @@
       top: 0.8rem;
     }
 
-    &--open {
-      display: flex;
+    &--menu {
+      width: 100%;
+      background-color: #f3f3f3;
       flex-direction: column;
+      gap: 20px 0;
+      padding: 6rem 0;
       position: absolute;
-      gap: 5rem;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      left: 0;
+      transform: translateY(-110%);
+      transition: transform 0.5s ease;
+      z-index: 5;
+    }
+
+    &--open {
+      transform: translateY(0);
     }
   }
 }
