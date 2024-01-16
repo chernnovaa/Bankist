@@ -49,3 +49,9 @@
     margin-bottom: 1rem;
   }
 }
+
+.grow-lazy {
+  @media only screen and (max-width: 675px) {
+    grid-area: 3;
+  }
+}

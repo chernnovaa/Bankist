@@ -320,5 +320,4 @@ const burgerMenu = document.querySelector('.burger--menu');
 
 burgerBtn.addEventListener('click', () => {
   burgerMenu.classList.toggle('burger--open');
-  // nav.style.height = '100vh';
 });

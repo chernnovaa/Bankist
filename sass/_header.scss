@@ -18,10 +18,9 @@
     align-items: start;
     justify-items: start;
 
-    @media only screen and (max-width: 850px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    @media only screen and (max-width: 675px) {
+      grid-template-columns: none;
+      justify-items: center;
     }
   }
 
@@ -31,9 +30,9 @@
     grid-row: 1 / span 4;
     transform: translateY(-6rem);
 
-    @media only screen and (max-width: 850px) {
-      width: 33%;
+    @media only screen and (max-width: 675px) {
       transform: translateY(0rem);
+      grid-area: 2;
     }
   }
 }
