@@ -2,6 +2,10 @@
   width: 65%;
   position: relative;
 
+  @media only screen and (max-width: 675px) {
+    width: 100%;
+  }
+
   &::before {
     content: '\201C';
     position: absolute;
@@ -12,6 +16,10 @@
     font-family: inherit;
     color: $color-primary-opacity;
     z-index: -1;
+
+    @media only screen and (max-width: 675px) {
+      display: none;
+    }
   }
 
   &__header {

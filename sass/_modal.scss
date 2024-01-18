@@ -10,10 +10,21 @@
   z-index: 1000;
   transition: all 0.5s;
 
+  @media only screen and (max-width: 675px) {
+    max-width: 40rem;
+    padding: 2rem 3rem;
+  }
+
   &__header {
     font-size: 3.25rem;
     margin-bottom: 4.5rem;
     line-height: 1.5;
+
+    @media only screen and (max-width: 675px) {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 30rem;
+    }
   }
 
   &__form {
@@ -22,6 +33,11 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
     gap: 2.5rem;
+
+    @media only screen and (max-width: 675px) {
+      margin: 0;
+      gap: 2rem;
+    }
 
     & label {
       font-size: 1.7rem;

@@ -7,6 +7,11 @@
   /* IN THE END */
   overflow: hidden;
 
+  @media only screen and (max-width: 675px) {
+    height: 60rem;
+    border-top: 1px solid #5ec5769e;
+  }
+
   &__btn {
     position: absolute;
     top: 50%;
@@ -22,14 +27,26 @@
     font-size: 3.25rem;
     cursor: pointer;
 
+    @media only screen and (max-width: 675px) {
+      top: 90%;
+    }
+
     &--left {
       left: 6%;
       transform: translate(-50%, -50%);
+
+      @media only screen and (max-width: 675px) {
+        left: 8%;
+      }
     }
 
     &--right {
       right: 6%;
       transform: translate(50%, -50%);
+
+      @media only screen and (max-width: 675px) {
+        right: 8%;
+      }
     }
   }
 }
@@ -46,6 +63,10 @@
 
   /* THIS creates the animation! */
   transition: transform 1s;
+
+  @media only screen and (max-width: 675px) {
+    align-items: baseline;
+  }
 
   & > img {
     /* Only for images that have different size than slide */

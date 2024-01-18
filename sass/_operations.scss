@@ -13,7 +13,7 @@
     }
 
     @media only screen and (max-width: 675px) {
-      max-width: 12rem;
+      max-width: 11rem;
     }
 
     &-container {
@@ -29,6 +29,10 @@
       margin-right: 1rem;
       font-weight: 600;
       display: inline-block;
+
+      @media only screen and (max-width: 675px) {
+        display: none;
+      }
     }
 
     &--1 {

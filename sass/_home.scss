@@ -4,6 +4,10 @@
 
   transition: transform 1s, opacity 1s;
 
+  @media only screen and (max-width: 675px) {
+    padding: 8rem 2rem;
+  }
+
   &--hidden {
     opacity: 0;
     transform: translateY(8rem);
